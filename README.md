@@ -10,6 +10,8 @@
 - 🔗 **Merkle Trees** to verify transaction integrity  
 - ⛏️ **Proof-of-Work (PoW) Mining** to prevent fraud  
 - 🔒 **Cryptographic Hashing** for tamper detection  
+- 🛡 **Input Validation & Secure Transactions** to prevent fraud and errors  
+- 🔍 **Robust User Search** by **Name & Phone Number** for easy user identification 
 
 ⚡ **Real-time security & validation for financial transactions!**  
 
@@ -29,7 +31,9 @@
    - View transaction history  
    - Manage savings  
 📜 **Blockchain Validation** – Confirms transaction authenticity  
-🛡 **Role-Based Security** – Strong authentication & secure logging  
+🛡 **Role-Based Security** – Strong authentication & secure logging
+🛂 **Input Validation** – Prevents SQL injection, XSS, and input errors  
+🔍 **Advanced User Search** – Find users **by name or phone number**  
 🚨 **Real-Time Security Alerts** (Future Feature)  
 
 ---
@@ -48,14 +52,15 @@
 
 ```plaintext
 Mobile_Banking_Program/
-│── banking_app.py       # Main application entry point
-│── db_conn.py           # Database connection handler (PostgreSQL)
-│── transactions.py      # Manages deposits, withdrawals, and transfers
-│── transactions.log     # Logs all financial transactions
-│── blockchain.py        # Implements Blockchain & Merkle Tree with mining
-│── utils.py             # Helper functions (password validation, hashing)
-│── requirements.txt     # Dependencies
-│── README.md            # Project documentation
+│── banking_app.py      # 🚀 Main application entry point & user interface
+│── auth.py             # 🔐 Handles user authentication (signup, login, password hashing)
+│── db_conn.py          # 🛢️ Secure PostgreSQL database connection handler
+│── transactions.py     # 💰 Manages deposits, withdrawals, transfers & balances
+│── transactions.log    # 📜 Stores all transaction logs for auditing & security
+│── blockchain.py       # 🔗 Implements Blockchain, Merkle Tree, & Proof-of-Work
+│── utils.py            # 🛠️ Helper functions (input validation, hashing, logging)
+│── requirements.txt    # 📦 Dependencies & Python package requirements
+│── README.md           # 📖 Project documentation & setup guide
 ```
 
 ---
@@ -70,7 +75,7 @@ python --version
 
 ### **📌 Clone Repository**  
 ```sh
-git clone https://github.com/your-username/Mobile_Banking_Program.git
+git clone https://github.com/Samnji/Mobile_Banking_Program.git
 cd Mobile_Banking_Program
 ```
 

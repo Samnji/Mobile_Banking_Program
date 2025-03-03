@@ -1,7 +1,6 @@
 import hashlib
 import datetime
 import json
-from collections import deque
 
 # Merkle Tree Implementation
 class MerkleTree:
@@ -122,23 +121,3 @@ class Blockchain:
                 return False
 
         return True
-
-
-# Step 1: Create a Blockchain and Add Valid Transactions
-blockchain = Blockchain()
-blockchain.add_transaction(Transaction("Alice", "Bob", 50, "deposit"))
-blockchain.mine_pending_transactions()
-
-blockchain.add_transaction(Transaction("Bob", "Charlie", 30, "withdraw"))
-blockchain.mine_pending_transactions()
-
-print("🔹 Blockchain valid before tampering:", blockchain.is_chain_valid())  # Should print True
-
-# Step 2: Introduce an Invalid Transaction (Tampering with Past Block)
-print("\n⚠ Tampering with blockchain...")
-
-blockchain.chain[1].transactions[0] = Transaction("Alice", "Bob", 5000, "deposit")  # Modify a past transaction
-blockchain.chain[1].hash = blockchain.chain[1].calculate_hash()  # Recalculate hash for tampered block
-
-# Step 3: Check Blockchain Integrity
-print("Blockchain valid after tampering:", blockchain.is_chain_valid())  # Should print False

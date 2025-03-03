@@ -7,6 +7,7 @@ from password_strength import PasswordPolicy, PasswordStats
 from rich.console import Console
 from rich.prompt import Prompt
 from db_conn import get_db_connection
+import sys
 
 ph = PasswordHasher()
 console = Console()
@@ -66,8 +67,7 @@ def password_check(phone_number, category='verify'):
     password_hash = user[0]
     attempts = 3
     while attempts > 0:
-        console.print("🔑 [bold cyan]Enter Password:[/bold cyan]", end=" ")
-        password = getpass("")
+        password = Prompt.ask("🔑 [bold cyan]Enter Password[/bold cyan]", password=True).strip()
         if unhash_password(password_hash, password):
             if category == 'verify':
                 print_statement("Password verified successfully!", "success", log=True)
@@ -108,7 +108,7 @@ def pass_strength_check(password):
     )
 
     if policy.test(password):
-        error = f"Weak password! Doesn't meet requirements: {policy.test(password)}"
+        error = f"Weak password! Doesn't meet these requirements: {policy.test(password)}"
         print_statement(error, 'critical')
         validity = False
     else:
@@ -147,10 +147,6 @@ def validate_phone_input():
     print_statement("Too many failed attempts! Restart the program.", "danger", bold=True, log=True)
     exit()
 
-from rich.prompt import Prompt
-from getpass import getpass
-import sys
-
 def validate_input(prompt_text, validation_func=None, error_message="Invalid input!", attempts=3, hidden=False):
     """
     Generic function to validate user input.
@@ -185,8 +181,8 @@ def validate_password():
     """
     attempts = 3
     while attempts > 0:
-        password1 = getpass("🔑 [bold cyan]Enter Password:[/bold cyan]").strip()
-        password2 = getpass("🔑 [bold magenta]Confirm Password:[/bold magenta]").strip()
+        password1 = Prompt.ask("🔑 [bold cyan]Enter Password[/bold cyan]", password=True).strip()
+        password2 = Prompt.ask("🔑 [bold cyan]Confirm Password[/bold cyan]", password=True).strip()
 
         if password1 != password2:
             print_statement("Passwords do not match! Try again.", "warning")
