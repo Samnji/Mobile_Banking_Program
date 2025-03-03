@@ -1,0 +1,74 @@
+# Python Bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+*.pdb
+
+# Virtual environments
+env/
+venv/
+ENV/
+*.venv/
+*.env
+
+# Django files
+db.sqlite3
+*.log
+*.pot
+*.py[cod]
+instance/
+*.db
+
+# Django migrations
+**/migrations/*
+!**/migrations/__init__.py  # Keep __init__.py to preserve the migrations folder structure
+
+# Ignore settings files (local configurations)
+**/settings.py  # Be careful with this; you may want to manage settings differently in production
+
+# Media and Static files
+/media/
+static/
+
+# IDE/Editor files
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Docker files (optional, depends on whether you want to include them)
+Dockerfile
+Dockerfile.dev
+Dockerfile.prod
+
+# Other files to ignore
+*.bak
+*.swp
+*.tmp
+*.swpx
+*.cover
+*.hypothesis
+nosetests.xml
+coverage.xml
+*.log
+
+# Google Cloud/Other secret files
+*.json  # If you're storing sensitive configuration or credentials locally
+
+# Test coverage and other test-related files
+.coverage
+coverage/
+
+# Pytest cache
+.cache/
+.pytest_cache/
+
+# PyCharm files (if using PyCharm)
+.idea/
+
+# Other custom files
+*.tgz
+*.zip
