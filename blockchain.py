@@ -109,15 +109,15 @@ class Blockchain:
             current_block = self.chain[i]
             previous_block = self.chain[i - 1]
 
-            # 🔴 Check if block hash is correct
+            # Check if block hash is correct
             if current_block.hash != current_block.calculate_hash():
                 return False
             
-            # 🔴 Check if Merkle Root is valid (detects transaction tampering)
+            # Check if Merkle Root is valid (detects transaction tampering)
             if current_block.merkle_root != MerkleTree(current_block.transactions).root:
                 return False
             
-            # 🔴 Check if previous hash is correct
+            # Check if previous hash is correct
             if current_block.previous_hash != previous_block.hash:
                 return False
 
@@ -141,4 +141,4 @@ blockchain.chain[1].transactions[0] = Transaction("Alice", "Bob", 5000, "deposit
 blockchain.chain[1].hash = blockchain.chain[1].calculate_hash()  # Recalculate hash for tampered block
 
 # Step 3: Check Blockchain Integrity
-print("🔴 Blockchain valid after tampering:", blockchain.is_chain_valid())  # Should print False
+print("Blockchain valid after tampering:", blockchain.is_chain_valid())  # Should print False
