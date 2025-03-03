@@ -198,4 +198,3 @@ print("Blockchain valid:", blockchain.is_chain_valid())
 ---
 
 ### **Crafted by Samuel Njiiri — Where Innovation Meets Trust, and Code Shapes the Future. 🚀**
-```
