@@ -1,0 +1,15 @@
+argon2-cffi
+argon2-cffi-bindings
+cffi
+ecdsa
+markdown-it-py
+mdurl
+password-strength
+phonenumbers
+psycopg2-binary
+pycparser
+pygments
+python-dotenv
+rich
+six
+typing-extensions
